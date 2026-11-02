@@ -1,0 +1,12 @@
+{
+  "version": "student-demo-v1",
+  "workspace": "【模拟】澍雨葡萄园",
+  "thread": "【模拟】葡萄园现场助手",
+  "plot": {"name": "【模拟】葡萄园A区", "crop": "葡萄", "stage": "观察演示期"},
+  "observedAt": 1793145600,
+  "images": ["vineyard.png", "grape-leaf.png"],
+  "tasks": [
+    {"title": "【模拟】复核棚区湿度", "description": "合成演示任务；观察数值不代表真实设备。"},
+    {"title": "【模拟】完成叶片巡查", "description": "教学完成记录，不是现场作业。", "completed": true, "note": "【模拟】已查看自生成葡萄园插画，记录待核实观察；未进行现场诊断。"}
+  ]
+}

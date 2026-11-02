@@ -1,0 +1,1 @@
+"""Standalone Shuyu server."""

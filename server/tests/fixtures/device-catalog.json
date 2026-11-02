@@ -1,0 +1,98 @@
+{
+  "schemaVersion": 1,
+  "dataMode": "demo",
+  "connected": false,
+  "notice": "纯演示目录，未接入现场设备；状态不代表实际在线或农艺安全；无生产控制。",
+  "devices": [
+    {
+      "id": "weather",
+      "name": "葡萄园微气象站",
+      "measurements": "气温 °C；相对湿度 %；降雨 mm；风速 m/s",
+      "agriculturalUse": "辅助对照天气事件和巡田记录",
+      "status": "demo",
+      "statusLabel": "演示 · 未接入",
+      "sources": [
+        "https://wine.wsu.edu/viticulture-enology-extension-news-spring-2023/"
+      ]
+    },
+    {
+      "id": "leaf-wetness",
+      "name": "冠层叶面湿润监测",
+      "measurements": "干/湿；湿润时长 h（按设备规则计算）",
+      "agriculturalUse": "观察冠层表面湿润过程；不是空气湿度或发病确诊",
+      "status": "demo",
+      "statusLabel": "演示 · 未接入",
+      "sources": [
+        "https://metos.global/en/leaf-sensors/",
+        "https://extension.psu.edu/backyard-grape-growing"
+      ]
+    },
+    {
+      "id": "soil-profile",
+      "name": "多深度土壤墒情站",
+      "measurements": "体积含水率 %；土温 °C；测点深度 cm",
+      "agriculturalUse": "比较各土层降雨和灌水响应；深度须按根区与土壤设计",
+      "status": "demo",
+      "statusLabel": "演示 · 未接入",
+      "sources": [
+        "https://extension.umn.edu/natural-resources/conservation/agricultural-soil-and-water/irrigation/soil-moisture-sensors-for-irrigation-scheduling"
+      ]
+    },
+    {
+      "id": "irrigation",
+      "name": "滴灌流量压力与阀门",
+      "measurements": "流量 m³/h；累计水量 m³；压力 kPa；阀门开/关/未知",
+      "agriculturalUse": "核查分区供水与漏堵线索；阀门状态不证明均匀出水",
+      "status": "demo",
+      "statusLabel": "演示 · 未接入",
+      "sources": [
+        "https://www.netafim.co/bynder/28dea0b8-8ef1-4037-9ea133d578881e27-drip-irrigation-system-handbook.pdf"
+      ]
+    },
+    {
+      "id": "fertigation",
+      "name": "水肥 EC/pH 监测",
+      "measurements": "电导率 mS/cm；pH 无量纲；校准时间",
+      "agriculturalUse": "观察供液性质及探头维护；不代表植株营养吸收或施肥处方",
+      "status": "demo",
+      "statusLabel": "演示 · 未接入",
+      "sources": [
+        "https://www.netafim.co/bynder/28dea0b8-8ef1-4037-9ea133d578881e27-drip-irrigation-system-handbook.pdf"
+      ]
+    },
+    {
+      "id": "insect-camera",
+      "name": "虫情诱捕相机",
+      "measurements": "图像；人工复核捕获数 头/次；目标虫种",
+      "agriculturalUse": "追踪指定诱捕对象；算法计数待人工复核，不代表园内总虫量",
+      "status": "demo",
+      "statusLabel": "演示 · 未接入",
+      "sources": [
+        "https://metos.global/en/iscout/",
+        "https://ipm.ucanr.edu/agriculture/grape/"
+      ]
+    },
+    {
+      "id": "frost",
+      "name": "霜冻监测与风机展示",
+      "measurements": "不同高度气温 °C；风速 m/s；风机待机/运行/未知",
+      "agriculturalUse": "结合逆温和地形讨论防霜；演示无远程启动能力",
+      "status": "demo",
+      "statusLabel": "演示 · 未接入",
+      "sources": [
+        "https://www.ontario.ca/page/wind-machines-minimizing-cold-injury-horticultural-crops"
+      ]
+    },
+    {
+      "id": "drone",
+      "name": "多光谱巡园无人机",
+      "measurements": "可见光影像；NDVI 无量纲；任务完成度 %",
+      "agriculturalUse": "寻找冠层空间差异并安排地面复查；指数不是病因或产量诊断",
+      "status": "demo",
+      "statusLabel": "演示 · 未接入",
+      "sources": [
+        "https://www.dji.com/newsroom/news/dji-launches-the-mavic-3-multispectral"
+      ]
+    }
+  ]
+}

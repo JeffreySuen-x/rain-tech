@@ -1,0 +1,12 @@
+{
+  "assets": [
+    {
+      "file": "vineyard-aerial-v1.png",
+      "created": "2026-10-31",
+      "origin": "Built-in imagegen; generated for this project",
+      "use": "Fictional vineyard background for simulated robot patrol; no real farm or location depicted",
+      "sha256": "58ccf2155c2b876dd1f6c0e7a9b9ed01d080689828d18865b397fee1e6437966",
+      "prompt": "Use case: photorealistic-natural. Asset type: background image for Shuyu vineyard robot patrol demonstration page. Create a premium high-resolution top-down aerial photograph style image of a small lush green grape vineyard in bright natural daylight. Vertical portrait 3:4 composition, entirely vineyard ground with evenly spaced long parallel rows of grape vines running vertically, narrow clear brown-and-green paths between rows, warm green foliage, detailed natural leaves, gentle sunlight, crisp realistic texture. A somewhat wider empty turning path across the top and bottom suitable for later UI route overlay. No people, robots, buildings, roads, machinery, route lines, dots, arrows, labels, words, logos, map overlays, borders or phone frames. This is a fictional vineyard illustration, to be labeled as simulated in the interface. The image itself is only the aerial vineyard background; all route indicators and controls will be real HTML/SVG overlays."
+    }
+  ]
+}

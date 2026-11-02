@@ -1,0 +1,19 @@
+{
+  "description": "Project-generated vineyard and leaf illustrations for demonstration. Not real field observations or diagnostic evidence.",
+  "files": [
+    {
+      "file": "vineyard.png",
+      "sha256": "e129aa3ceba5f245041c170bbf97a6b76c0da0dc044e851a4069aa0c2587564e",
+      "bytes": 3329399,
+      "origin": "project-generated illustration",
+      "isRealFieldObservation": false
+    },
+    {
+      "file": "grape-leaf.png",
+      "sha256": "cb94dbef8b62790ffda0316eb68698069f86ae7e462c20777fcc0b1fda2fcba5",
+      "bytes": 2416127,
+      "origin": "project-generated illustration",
+      "isRealFieldObservation": false
+    }
+  ]
+}

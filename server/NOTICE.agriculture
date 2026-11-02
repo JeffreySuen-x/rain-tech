@@ -1,0 +1,9 @@
+Shuyu agriculture product
+
+Project-owned source is licensed under the root MIT license.
+Document libraries are used through their public APIs. Installed packages retain
+their own copyright and license notices: python-docx / python-pptx (MIT),
+pypdf / lxml (BSD-3-Clause), XlsxWriter (BSD-2-Clause),
+Pillow 13 (MIT-CMU and bundled codec notices), typing_extensions (PSF-2.0).
+See AGRICULTURE_SOURCES.json, requirements-lock.txt, NOTICE.Pillow-13.0.0.txt,
+and the license files distributed by each dependency.

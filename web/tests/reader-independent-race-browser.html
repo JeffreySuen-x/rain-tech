@@ -1,0 +1,41 @@
+<!doctype html><meta charset="utf-8"><title>Independent real Vue reader race QA</title><div id="workbench"></div><pre id="qa-results" role="status">RUNNING</pre>
+<script type="module">
+import {createApp,nextTick} from 'vue'
+import {createPinia,setActivePinia} from 'pinia'
+import AgricultureWorkbench from '/src/agriculture/AgricultureWorkbench.vue'
+import {useWorkspace} from '/src/store.js'
+const results=[],errors=[],requests=[],pending=[]
+const check=(value,message)=>{results.push({message,passed:Boolean(value)});if(!value)errors.push(message)}
+const settle=async(predicate)=>{for(let i=0;i<60&&!predicate();i++){await new Promise(r=>setTimeout(r,0));await nextTick()}if(!predicate())throw Error('fixture wait condition not met')}
+const items=['A','B'].map(id=>({id,title:'文章'+id,assetId:'asset-'+id,version:1,sourceHash:'hash-'+id,excerpts:[{text:'preview-'+id}],library:{id:'test-library',articleId:id,sourceRelativePath:'articles/'+id+'.md',memberships:[]}}))
+const originalFetch=window.fetch
+window.fetch=async(url,options={})=>{
+ const path=String(url);requests.push({path,method:options.method||'GET'})
+ if(/\/assets\/asset-[AB]\/content$/.test(path))return new Promise(resolve=>pending.push({id:path.includes('asset-A')?'A':'B',resolve:text=>resolve(new Response(text,{status:200}))}))
+ const item=items.find(x=>path.endsWith('/knowledge/'+x.id))
+ const body=item?{knowledge:item}:path.endsWith('/assets')?{assets:items.map(x=>({id:x.assetId,name:x.title+'.md',kind:'document',mediaType:'text/markdown',status:'ready'}))}:path.endsWith('/knowledge')?{knowledge:items}:path.endsWith('/skills')?{skills:[]}:{devices:[],plots:[],workItems:[],reports:[],followUps:[],threads:[],memories:[]}
+ return new Response(JSON.stringify(body),{status:200,headers:{'Content-Type':'application/json'}})
+}
+const pinia=createPinia();setActivePinia(pinia);const s=useWorkspace();s.user={id:'fixture-owner'};s.workspaceId='w';s.workspaces=[{id:'w',name:'Fixture'},{id:'w2',name:'Other'}]
+const app=createApp(AgricultureWorkbench);app.use(pinia)
+try{
+ app.mount('#workbench');await settle(()=>document.querySelector('#workbench button'))
+ const root=document.querySelector('#workbench');const clickText=text=>{const button=[...root.querySelectorAll('button')].find(x=>x.textContent.trim()===text);if(!button)throw Error('missing button '+text);button.click()}
+ clickText('学习知识库');await settle(()=>root.querySelectorAll('.knowledge-grid article').length===2)
+ const read=id=>{const card=[...root.querySelectorAll('.knowledge-grid article')].find(x=>x.textContent.includes('文章'+id));[...card.querySelectorAll('button')].find(x=>x.textContent==='阅读原文').click()}
+ read('A');await settle(()=>pending.length===1);read('B');await settle(()=>pending.length===2)
+ pending[1].resolve('# B\n\nB_CURRENT_BODY');await settle(()=>root.textContent.includes('B_CURRENT_BODY'));pending[0].resolve('# A\n\nA_LATE_SECRET');await new Promise(r=>setTimeout(r,0));await nextTick()
+ check(root.querySelector('.knowledge-reading-layer')?.textContent.includes('B_CURRENT_BODY')&&!root.querySelector('.knowledge-reading-layer')?.textContent.includes('A_LATE_SECRET'),'late A response cannot overwrite B')
+ clickText('← 返回知识库');await nextTick();read('A');await settle(()=>pending.length===3);clickText('← 返回知识库');await nextTick();pending[2].resolve('# A\n\nCLOSED_SECRET');await new Promise(r=>setTimeout(r,0));await nextTick()
+ check(!root.querySelector('.knowledge-reading-layer')&&!root.textContent.includes('CLOSED_SECRET'),'close prevents late response reopening reader')
+ read('A');await settle(()=>pending.length===4);pending[3].resolve('# A\n\nREOPEN_CURRENT');await settle(()=>root.textContent.includes('REOPEN_CURRENT'));check(!root.textContent.includes('CLOSED_SECRET'),'reopening A does not reuse closed response')
+ clickText('← 返回知识库');await nextTick();read('B');await settle(()=>pending.length===5);s.workspaceId='w2';await nextTick();pending[4].resolve('# B\n\nOTHER_WORKSPACE_SECRET');await new Promise(r=>setTimeout(r,0));await nextTick()
+ check(!root.querySelector('.knowledge-reading-layer')&&!root.textContent.includes('OTHER_WORKSPACE_SECRET'),'workspace change closes and fences old content')
+ await settle(()=>root.querySelectorAll('.knowledge-grid article').length===2);read('A');await settle(()=>pending.length===6);s.user=null;s.sessionEpoch++;await nextTick();pending[5].resolve('# A\n\nLOGOUT_SECRET');await new Promise(r=>setTimeout(r,0));await nextTick()
+ check(!root.querySelector('.knowledge-reading-layer')&&!root.textContent.includes('LOGOUT_SECRET'),'logout closes reader and discards in-flight response')
+ check(requests.every(x=>x.method==='GET'&&!/turns|analy[sz]e|transcribe/.test(x.path)),'reading performs authenticated GETs only and never calls model/mutations')
+ check(!s.agricultureContext?.knowledgeIds?.length&&!s.includeHistory,'reading races never select references or enable history')
+}catch(error){errors.push(error.stack||String(error))}
+app.unmount();window.fetch=originalFetch
+const summary={status:errors.length?'FAILED':'PASSED',checks:results.length,results,errors,requests};window.__readerIndependentResult=summary;document.querySelector('#qa-results').textContent=JSON.stringify(summary,null,2)
+</script>

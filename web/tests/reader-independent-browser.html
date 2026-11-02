@@ -1,0 +1,41 @@
+<!doctype html><meta charset="utf-8"><title>Independent Vue reader DOM security QA</title><div id="reader"></div><pre id="qa-results" role="status">RUNNING</pre>
+<script type="module">
+import {createApp,h,nextTick} from 'vue'
+import KnowledgeReader from '/src/agriculture/KnowledgeReader.vue'
+const results=[],errors=[],calls=[];window.__readerXss=0
+const check=(value,message)=>{results.push({message,passed:Boolean(value)});if(!value)errors.push(message)}
+const raw=['---','title: ORIGINAL_FRONTMATTER','---','# 标题','', '中文**重要** *强调* `CODE_LITERAL`','', '3. first','   - nested','', '> 引用正文','', '| 列一 | 列二 |','| --- | ---: |','| a\\|b | `c|d` |','', '```html','<script>window.__readerXss=1<\/script>','```','', '[正常](https://example.org/p?a=1&b=2) [跳转](B.md#section-L1) [危险](javascript:window.__readerXss=1)','', '![隐藏图片](http://127.0.0.1:6499/reader-exfil-sentinel)','', '<img src="/reader-exfil-sentinel" onerror="window.__readerXss=1">','<iframe src="/reader-exfil-sentinel"></iframe>','<svg onload="window.__readerXss=1"></svg>','<style>@import url(/reader-exfil-sentinel);</style>','<script>window.__readerXss=1<\/script>','', '## 章节二','', 'FINAL_TAIL_SENTINEL'].join('\n')
+const item={id:'A',title:'QA source',version:1,sourceHash:'test-hash',library:{id:'test-library',articleId:'A',sourceRelativePath:'articles/A.md',sourceVersion:'test'}}
+const sibling={id:'B',library:{id:'test-library',articleId:'B',sourceRelativePath:'articles/B.md'}}
+const sourceBefore=raw;const selected=[];const events=[]
+const originalFetch=window.fetch;window.fetch=(...args)=>{calls.push(['fetch',String(args[0])]);return Promise.reject(Error('QA no network'))}
+const originalOpen=window.open;window.open=(...args)=>calls.push(['open',String(args[0])])
+const app=createApp({render:()=>h(KnowledgeReader,{item,text:raw,items:[item,sibling],selected,onToggle:id=>events.push(['toggle',id]),onArticle:target=>events.push(['article',target.id]),onClose:()=>events.push(['close'])})})
+try{
+ app.mount('#reader');await nextTick()
+ const root=document.querySelector('#reader')
+ check(root.querySelectorAll('h1').length===1,'one semantic H1')
+ check(root.querySelector('.reader-prose strong')?.textContent==='重要','Chinese emphasis semantic strong')
+ check(Boolean(root.querySelector('em'))&&Boolean(root.querySelector('ol[start="3"] ul')),'emphasis and two-level ordered/unordered lists')
+ check(root.querySelector('thead th')?.textContent==='列一'&&root.querySelector('tbody td')?.textContent==='a|b'&&root.querySelector('tbody tr td:nth-child(2) code')?.textContent==='c|d','actual table DOM preserves escaped/code pipes')
+ check(root.querySelector('blockquote')?.textContent.includes('引用正文')&&root.querySelector('figure code')?.textContent.includes('<script>'),'blockquote and code literal DOM')
+ check(root.textContent.includes('FINAL_TAIL_SENTINEL'),'full final paragraph rendered')
+ check(root.querySelectorAll('script,iframe,img,svg,style,object,embed,source,video,link').length===0,'no executable/resource elements created')
+ check([...root.querySelectorAll('*')].every(el=>[...el.attributes].every(a=>!/^on/i.test(a.name))),'no source event attributes created')
+ check(window.__readerXss===0&&calls.length===0,'no fixture execution or automatic fetch/open')
+ const external=root.querySelector('.reader-prose a');check(external?.getAttribute('rel')==='noopener noreferrer'&&external?.target==='_blank'&&external?.href==='https://example.org/p?a=1&b=2','normal external links have safe rel and query preserved')
+ const clickText=text=>[...root.querySelectorAll('button')].find(x=>x.textContent===text)?.click()
+ clickText('跳转');await nextTick();check(events.some(x=>x[0]==='article'&&x[1]==='B'),'relative authorized article emits ID only')
+ clickText('危险');await nextTick();check(window.__readerXss===0&&root.textContent.includes('链接不可用'),'unsafe link cannot navigate or execute')
+ clickText('目录');await nextTick();
+ const toc=[...root.querySelectorAll('nav[aria-label="文章目录"] button')];check(toc.length===2&&root.querySelector('#section-L4'),'TOC anchors match generated original source lines');toc[1].click();await nextTick()
+ root.querySelector('button[aria-label="阅读字号与行距"]').click();await nextTick();
+ const size=root.querySelector('select[aria-label="阅读字号"]');size.value='large';size.dispatchEvent(new Event('change',{bubbles:true}));await nextTick();check(root.querySelector('.reader-size-large'),'font size control changes reader class')
+ const spacing=root.querySelector('select[aria-label="阅读行距"]');spacing.value='compact';spacing.dispatchEvent(new Event('change',{bubbles:true}));await nextTick();check(root.querySelector('.reader-spacing-compact'),'line spacing control works')
+ clickText('更多 ···');await nextTick();clickText('原文与来源');await nextTick();check(root.querySelector('.reader-sources')?.textContent.includes('ORIGINAL_FRONTMATTER')&&root.querySelector('.reader-sources')?.textContent.includes('FINAL_TAIL_SENTINEL'),'secondary source view preserves frontmatter and full tail')
+ check(raw===sourceBefore&&selected.length===0&&events.every(x=>x[0]!=='toggle')&&calls.length===0,'reading/navigation do not select references or call model/network')
+ check(performance.getEntriesByType('resource').every(x=>!x.name.includes('reader-exfil-sentinel')),'no automatic resource request observed in browser performance')
+}catch(error){errors.push(error.stack||String(error))}
+window.fetch=originalFetch;window.open=originalOpen
+const summary={status:errors.length?'FAILED':'PASSED',checks:results.length,results,errors};window.__readerIndependentResult=summary;document.querySelector('#qa-results').textContent=JSON.stringify(summary,null,2)
+</script>

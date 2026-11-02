@@ -1,0 +1,1129 @@
+
+  .mobile-garden,.mobile-back,.mobile-menu-shade,.mobile-chat-actions {
+    display:none
+  }
+  @media(max-width:767px) {
+  .agri-workbench {
+    background:#fafbf7;
+    color:#163a32
+  }
+  .agri-main {
+    padding:18px 18px 90px
+  }
+  .agri-main>header h1 {
+    font-size:25px
+  }
+  .agri-main>header p {
+    display:none
+  }
+  .mobile-workspace-header {
+    background:#fafbf7;
+    border:0;
+    min-height:64px
+  }
+  .mobile-workspace-header span {
+    max-width:160px;
+    overflow:hidden;
+    text-overflow:ellipsis;
+    white-space:nowrap
+  }
+  .mobile-workspace-nav {
+    grid-template-columns:repeat(3,1fr);
+    background:#fffefb;
+    min-height:70px;
+    padding:5px 16px calc(5px + env(safe-area-inset-bottom))
+  }
+  .mobile-workspace-nav button {
+    min-height:52px;
+    font-size:13px
+  }
+  .mobile-workspace-nav button.active {
+    background:#e9eee3;
+    border-radius:14px;
+    color:#164d3b
+  }
+  .mobile-garden {
+    display:block
+  }
+  .agri-main:has(.mobile-garden)>.friendly-welcome,.agri-main:has(.mobile-garden)>.agri-context,.mobile-garden~* {
+    display:none!important
+  }
+  .mobile-field {
+    position:relative;
+    height:164px;
+    border-radius:16px;
+    overflow:hidden;
+    background:#edf1e5
+  }
+  .mobile-field img {
+    width:100%;
+    height:100%;
+    object-fit:cover
+  }
+  .mobile-field>span {
+    position:absolute;
+    bottom:10px;
+    left:10px;
+    background:#243c30c9;
+    color:white;
+    border-radius:15px;
+    padding:6px 10px;
+    font-size:11px
+  }
+  .mobile-weather {
+    margin-top:10px;
+    border:1px solid #e2e7df;
+    border-radius:15px;
+    padding:15px;
+    background:white
+  }
+  .mobile-weather>strong {
+    font-size:18px
+  }
+  .mobile-weather>small {
+    float:right;
+    font-size:10px
+  }
+  .mobile-metrics {
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    margin-top:15px;
+    border-top:1px solid #edf0e9;
+    padding-top:12px
+  }
+  .mobile-metrics>div {
+    display:flex;
+    flex-direction:column;
+    border-right:1px solid #edf0e9;
+    padding:0 8px
+  }
+  .mobile-metrics small {
+    font-size:11px;
+    color:#6e7972
+  }
+  .mobile-metrics strong {
+    font-size:19px;
+    margin:5px 0
+  }
+  .mobile-metrics span {
+    font-size:10px;
+    color:#7b8c7b
+  }
+  .mobile-garden h2 {
+    font-size:21px;
+    margin:20px 0 12px
+  }
+  .mobile-garden h2 small {
+    font-size:12px;
+    background:#e5ecde;
+    border-radius:12px;
+    padding:4px 10px
+  }
+  .mobile-task {
+    width:100%;
+    text-align:left;
+    background:white;
+    border:1px solid #e3e7df;
+    border-radius:14px;
+    padding:15px;
+    margin-bottom:8px;
+    display:flex;
+    flex-direction:column;
+    gap:7px
+  }
+  .mobile-task:first-of-type {
+    background:#fff8e9;
+    border-color:#eed69b
+  }
+  .mobile-task span {
+    font-size:12px;
+    color:#778075
+  }
+  .mobile-shortcuts {
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:8px
+  }
+  .mobile-shortcuts button {
+    min-height:72px;
+    background:white;
+    border:1px solid #e4e8df;
+    border-radius:16px;
+    font-size:27px;
+    color:#18553f
+  }
+  .mobile-shortcuts span {
+    display:block;
+    font-size:14px;
+    margin-top:5px
+  }
+  .mobile-all-tasks {
+    width:100%;
+    background:transparent;
+    border:0;
+    min-height:44px
+  }
+  .mobile-back {
+    display:block;
+    min-height:44px
+  }
+  .mobile-menu-shade {
+    display:block;
+    position:fixed;
+    inset:64px 0 70px;
+    background:#163a3250;
+    z-index:29
+  }
+  .mobile-chat-actions {
+    display:flex;
+    gap:5px;
+    padding:6px 12px
+  }
+  .mobile-chat-actions button {
+    min-height:44px;
+    background:#eef1e8;
+    border:0;
+    border-radius:10px
+  }
+  .agri-message.user {
+    background:#e9f0e2;
+    border-radius:16px
+  }
+  .agri-message.assistant {
+    background:#fff;
+    border-radius:16px
+  }
+  .agri-agent>header {
+    background:#fafbf7
+  }
+  .agri-composer {
+    background:white;
+    border-radius:20px;
+    margin:0 10px 8px
+  }
+  .agri-skill-bar summary {
+    cursor:pointer;
+    min-height:30px
+  }
+  .agri-workbench button {
+    touch-action:manipulation
+  }
+  }
+  @media(max-width:767px) {
+  .mobile-workspace-header {
+    color:#163a32
+  }
+  .mobile-workspace-header button {
+    background:transparent;
+    border:0;
+    color:#163a32;
+    min-width:44px;
+    font-size:24px
+  }
+  .mobile-workspace-header>div {
+    justify-content:center;
+    flex:1;
+    overflow:hidden
+  }
+  .mobile-workspace-header strong {
+    overflow:hidden;
+    text-overflow:ellipsis
+  }
+  .mobile-workspace-header button img {
+    width:32px
+  }
+  .agri-main>header .agri-agent-toggle {
+    display:none
+  }
+  .chat-workspace .agri-agent>header {
+    padding:4px 12px;
+    min-height:44px
+  }
+  .chat-workspace .agri-agent>header>.shuyu-brand-mark,.chat-workspace .agri-agent>header h2 {
+    display:none
+  }
+  .chat-workspace .agri-agent>header>div {
+    flex:1
+  }
+  .chat-workspace .agri-agent>header small {
+    font-size:12px;
+    background:#edf0e8;
+    border-radius:14px;
+    padding:8px
+  }
+  .agri-main:has(.library-browser)>header {
+    display:none
+  }
+  .agri-workbench .agri-skill-bar {
+    display:block;
+    flex-shrink:0
+  }
+  .agri-skill-bar:not([open])>*:not(summary) {
+    display:none
+  }
+  }
+  @media(min-width:768px) {
+  .agri-skill-bar>summary {
+    display:none
+  }
+  .agri-workbench details.agri-skill-bar>*:not(summary) {
+    display:revert
+  }
+  .agri-workbench details.agri-skill-bar {
+    display:flex
+  }
+  }
+  @media(max-width:767px) {
+  .agri-workbench .mobile-garden h2 {
+    margin:20px 0 12px
+  }
+  .agri-workbench .mobile-weather {
+    margin-top:10px
+  }
+  .mobile-field>p {
+    padding:36px 20px
+  }
+  .mobile-workspace-header>div>img {
+    flex-shrink:0
+  }
+  .mobile-workspace-header>div>strong {
+    font-size:18px
+  }
+  .agri-main:has(.mobile-garden)>header {
+    margin-bottom:10px
+  }
+  .mobile-menu-shade {
+    z-index:61
+  }
+  .mobile-field-empty {
+    width:100%;
+    height:100%;
+    background:#edf1e5!important;
+    border:0!important
+  }
+  .mobile-task strong {
+    overflow-wrap:anywhere
+  }
+  .mobile-shortcuts button {
+    min-width:0
+  }
+  .mobile-metrics>div:last-child {
+    border-right:0
+  }
+  }
+  .mobile-voice {
+    display:none
+  }
+  @media(max-width:767px) {
+  .mobile-workspace-header .mobile-garden-selector {
+    font-size:17px;
+    font-weight:700;
+    max-width:80%;
+    overflow:hidden;
+    text-overflow:ellipsis;
+    text-align:left
+  }
+  .mobile-workspace-header:has(.mobile-garden-selector)>div {
+    display:none
+  }
+  .mobile-workspace-header:has(.mobile-garden-selector) {
+    justify-content:space-between
+  }
+  .mobile-workspace-header:has(.mobile-garden-selector)>button:last-child {
+    margin-left:auto
+  }
+  .agri-main:has(.library-browser)>header,.agri-main:has(.library-browser)>.live-banner,.agri-main:has(.library-browser)>.agri-context {
+    display:none
+  }
+  .agri-agent>.agri-skill-bar {
+    display:none!important
+  }
+  .agri-agent .agri-upload-buttons {
+    display:none
+  }
+  .agri-agent .agri-composer {
+    display:grid;
+    grid-template-columns:36px minmax(0,1fr) 44px;
+    align-items:center;
+    min-height:58px;
+    padding:6px 10px
+  }
+  .agri-composer .mobile-voice {
+    display:block;
+    padding:0;
+    font-size:26px;
+    width:36px;
+    height:44px;
+    border:0
+  }
+  .agri-composer textarea {
+    height:42px;
+    min-height:42px;
+    max-height:80px;
+    resize:none;
+    padding-top:10px;
+    overflow:auto
+  }
+  .mobile-chat-actions {
+    padding:4px 12px
+  }
+  .mobile-chat-actions button {
+    min-height:36px
+  }
+  .mobile-context-pill {
+    cursor:pointer
+  }
+  .mobile-workspace-header:has(.mobile-garden-selector)+.agri-sidebar .agri-brand {
+    display:none
+  }
+  }
+  .mobile-answer-task {
+    display:none
+  }
+  @media(max-width:767px) {
+  .agri-workbench:not(.chat-workspace) .agri-main:has(.library-browser)>header {
+    display:none!important
+  }
+  .agri-agent .agri-composer textarea {
+    height:28px;
+    min-height:28px;
+    line-height:24px;
+    padding:2px 0;
+    max-height:72px;
+    white-space:pre-wrap
+  }
+  .mobile-metrics svg {
+    width:100%;
+    height:25px;
+    color:#4eaa72
+  }
+  .mobile-metrics>div:nth-child(2) svg {
+    color:#469bee
+  }
+  .mobile-metrics>div:nth-child(3) svg {
+    color:#bd803a
+  }
+  .mobile-task strong {
+    display:flex;
+    align-items:center;
+    gap:8px;
+    width:100%
+  }
+  .mobile-task strong small {
+    font-size:10px;
+    white-space:nowrap;
+    background:#ffe6b7;
+    color:#a26b25;
+    border-radius:10px;
+    padding:4px 8px;
+    margin-left:auto
+  }
+  .mobile-task-dot {
+    width:13px;
+    height:13px;
+    flex-shrink:0;
+    border-radius:50%;
+    background:#f4a600
+  }
+  .mobile-task:not(:first-of-type) .mobile-task-dot {
+    background:transparent;
+    border:1px solid #9da69a
+  }
+  .agri-workbench .mobile-answer-task {
+    display:block;
+    width:100%;
+    background:#225642;
+    color:white;
+    margin-top:12px;
+    min-height:44px;
+    border-radius:12px
+  }
+  .agri-message.assistant .message-list-line {
+    background:#eef2e7;
+    padding:8px 12px;
+    border-radius:8px;
+    margin-top:6px
+  }
+  }
+  .mobile-upload-receipt {
+    display:none
+  }
+  /* Keep photographic messages and short guidance at the proportions of the mobile concept. */
+  @media(max-width:767px) {
+  .agri-messages {
+    padding:14px 18px
+  }
+  .agri-message.user {
+    max-width:74%;
+    margin-left:auto;
+    padding:10px 12px
+  }
+  .agri-message.user>small {
+    display:none
+  }
+  .agri-message.user .agri-message-photo {
+    display:block;
+    width:100%;
+    max-width:210px;
+    height:154px;
+    object-fit:cover;
+    border-radius:12px
+  }
+  .agri-message .agri-message-body>p:has(>span:only-child:empty) {
+    display:none
+  }
+  .agri-message.assistant {
+    padding:8px;
+    margin-top:12px
+  }
+  .agri-message p {
+    font-size:15px;
+    line-height:1.7;
+    margin:9px 0
+  }
+  .agri-workbench .mobile-chat-actions button {
+    min-height:44px
+  }
+  .agri-workbench .mobile-all-tasks {
+    background:transparent;
+    border:0;
+    padding:8px
+  }
+  .mobile-field {
+    height:150px
+  }
+  .mobile-weather {
+    padding:12px
+  }
+  .mobile-metrics {
+    margin-top:10px;
+    padding-top:10px
+  }
+  .mobile-metrics>div>span {
+    display:none
+  }
+  .mobile-weather>.mobile-observation-time {
+    float:none;
+    text-align:right;
+    margin-top:4px
+  }
+  .agri-workbench .mobile-garden h2 {
+    margin:16px 0 10px
+  }
+  .mobile-task {
+    padding:12px;
+    gap:5px
+  }
+  .mobile-task>span {
+    display:-webkit-box;
+    -webkit-line-clamp:2;
+    -webkit-box-orient:vertical;
+    overflow:hidden;
+    line-height:1.5
+  }
+  .mobile-upload-receipt {
+    display:flex;
+    align-items:center;
+    gap:8px;
+    padding:8px 12px;
+    background:#eff3e8;
+    font-size:12px;
+    flex-shrink:0
+  }
+  .mobile-upload-receipt span {
+    min-width:0;
+    overflow-wrap:anywhere
+  }
+  .mobile-upload-receipt button {
+    margin-left:auto;
+    white-space:nowrap;
+    min-height:44px
+  }
+  .chat-workspace .agri-main .agri-upload-receipt {
+    display:none
+  }
+  .agri-workbench .mobile-weather-toggle {
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    width:100%;
+    padding:0;
+    border:0;
+    background:transparent;
+    text-align:left;
+    gap:8px
+  }
+  .mobile-weather-toggle strong {
+    font-size:18px
+  }
+  .mobile-weather-toggle small {
+    font-size:10px;
+    color:#899187
+  }
+  .mobile-weather-detail {
+    font-size:12px;
+    line-height:1.7;
+    padding-top:10px
+  }
+  .mobile-observation-time {
+    display:block;
+    font-size:10px;
+    color:#7c897c;
+    margin-top:8px
+  }
+  .mobile-live-state {
+    font-size:12px;
+    background:#fff5dc;
+    padding:8px;
+    border-radius:8px;
+    margin-top:8px!important
+  }
+  .mobile-shortcuts small {
+    font-size:10px;
+    color:#b57a24;
+    display:block
+  }
+  .mobile-live-state button {
+    min-height:44px
+  }
+  .mobile-garden>.mobile-task {
+    min-height:88px;
+    padding:18px;
+    border:1px solid #dce9de;
+    border-radius:18px;
+    background:#fffdf5;
+    margin-bottom:12px
+  }
+  .mobile-garden>.mobile-task:first-of-type {
+    background:#fff5d9;
+    border-color:#edda9f
+  }
+  .mobile-media-result {
+    padding:18px;
+    margin:12px 0;
+    border:1px solid #cfe3d8;
+    border-radius:18px;
+    background:#f5faf6;
+    white-space:pre-wrap
+  }
+  .mobile-media-result button,.mobile-upload-receipt button {
+    min-height:44px
+  }
+  .agri-modal textarea {
+    box-sizing:border-box;
+    width:100%;
+    padding:14px;
+    font:inherit;
+    border:1px solid #cadbd1;
+    border-radius:12px;
+    resize:vertical
+  }
+  }
+  .task-detail {
+    padding:24px;
+    max-width:760px;
+    margin:auto
+  }
+  .task-detail h3 {
+    font-size:24px
+  }
+  .task-detail p {
+    font-size:17px;
+    line-height:1.8;
+    white-space:pre-wrap
+  }
+  .task-detail .agri-primary {
+    width:100%;
+    min-height:52px;
+    font-size:17px;
+    margin-top:20px
+  }
+  .task-record-photo {
+    display:block;
+    max-width:220px;
+    border-radius:14px;
+    margin:12px 0
+  }
+  @media(max-width:767px) {
+  .mobile-task strong,.mobile-task span {
+    font-size:16px!important;
+    line-height:1.6
+  }
+  .task-detail {
+    padding:20px
+  }
+  .task-detail .task-meta {
+    font-size:16px
+  }
+  .task-detail h4 {
+    font-size:18px;
+    margin-top:28px
+  }
+  }
+  .task-detail-shell {
+    border:0!important;
+    padding:0!important;
+    background:transparent!important;
+    box-shadow:none!important
+  }
+  .task-detail-shell .task-card-grid {
+    display:block
+  }
+  .task-detail-shell .agri-section-title {
+    margin-bottom:12px
+  }
+  .task-detail-shell .task-detail {
+    box-sizing:border-box;
+    width:100%;
+    margin:0;
+    padding:20px;
+    border:0;
+    box-shadow:none
+  }
+  .task-detail-shell .task-detail p {
+    font-size:17px;
+    line-height:1.65;
+    margin:9px 0
+  }
+  .task-detail-shell .task-detail h4 {
+    margin:18px 0 10px
+  }
+  .task-detail-shell .task-detail h3 {
+    margin:12px 0
+  }
+  .task-detail-shell .task-follow-settings {
+    margin-top:12px
+  }
+  .agri-workbench .task-detail-shell .task-detail .agri-primary {
+    font-size:17px;
+    font-weight:600
+  }
+  .completion-thumbnail {
+    width:80px;
+    height:88px;
+    object-fit:cover;
+    border-radius:12px;
+    display:block
+  }
+  @media(max-width:767px) {
+  .desktop-task-flow {
+    display:none!important
+  }
+  .agri-main:has(.mobile-task-flow)>header {
+    display:none
+  }
+  .agri-modal:has(.mobile-completion-form) {
+    inset:60px 0 70px;
+    padding:0;
+    background:#fff;
+    align-items:stretch
+  }
+  .agri-modal:has(.mobile-completion-form)>section {
+    max-height:none;
+    width:100%;
+    max-width:none;
+    box-sizing:border-box;
+    border-radius:0;
+    padding:18px;
+    overflow:auto
+  }
+  .mobile-completion-form h2 {
+    font-size:25px;
+    color:#103d33
+  }
+  .mobile-completion-form textarea {
+    min-height:180px;
+    font-size:16px;
+    line-height:1.7
+  }
+  .mobile-completion-form fieldset {
+    border:0;
+    padding:16px 0;
+    display:flex;
+    flex-wrap:wrap;
+    gap:12px
+  }
+  .mobile-completion-form fieldset label {
+    width:88px;
+    font-size:12px;
+    overflow-wrap:anywhere
+  }
+  .mobile-completion-form .agri-primary {
+    width:100%;
+    min-height:52px;
+    background:#165442
+  }
+  .mobile-completion-form fieldset legend {
+    font-size:18px;
+    font-weight:700
+  }
+  .agri-workbench,.mobile-workspace-header,.agri-agent>header {
+    background:#fff;
+    color:#103d33
+  }
+  .agri-main {
+    padding-left:17px;
+    padding-right:17px
+  }
+  .mobile-workspace-nav {
+    min-height:68px;
+    background:#fff
+  }
+  .mobile-workspace-nav button.active {
+    background:#e6f5dd;
+    color:#165442
+  }
+  .mobile-workspace-nav button.active i {
+    font-weight:900
+  }
+  .mobile-upload-receipt {
+    position:relative;
+    display:flex;
+    flex-wrap:wrap;
+    margin:8px 17px;
+    padding:12px;
+    border:1px solid #e6eee7;
+    border-radius:17px;
+    background:white;
+    font-size:13px
+  }
+  .mobile-upload-receipt>img {
+    width:100%;
+    height:160px;
+    object-fit:cover;
+    border-radius:12px
+  }
+  .mobile-upload-receipt>span {
+    width:100%;
+    padding:6px 0;
+    line-height:1.5
+  }
+  .mobile-upload-receipt>.agri-primary {
+    width:100%;
+    background:#165442;
+    color:white;
+    border-radius:12px;
+    min-height:50px;
+    margin:4px 0
+  }
+  .mobile-upload-receipt>.upload-dismiss {
+    position:absolute;
+    right:17px;
+    top:16px;
+    border-radius:50%;
+    width:34px;
+    height:34px;
+    min-height:34px;
+    background:white;
+    font-size:24px
+  }
+  .mobile-upload-receipt>button:not(.agri-primary):not(.upload-dismiss) {
+    font-size:12px;
+    background:#f1f7ee;
+    border:0;
+    border-radius:10px
+  }
+  .mobile-chat-actions {
+    display:block;
+    padding:4px 17px
+  }
+  .mobile-chat-actions summary {
+    font-size:14px;
+    color:#527366;
+    min-height:36px;
+    cursor:pointer
+  }
+  .mobile-chat-actions:not([open])>button {
+    display:none
+  }
+  .mobile-chat-actions[open]>button {
+    margin:4px
+  }
+  .voice-overlay {
+    position:fixed;
+    inset:0 0 calc(68px + env(safe-area-inset-bottom));
+    z-index:90;
+    overflow:auto;
+    background:white;
+    display:block
+  }
+  .agri-modal:has(.mobile-action-form) {
+    align-items:end;
+    padding:0;
+    background:#103d3355
+  }
+  .agri-modal:has(.mobile-action-form)>section {
+    width:100%;
+    max-width:none;
+    box-sizing:border-box;
+    border-radius:22px 22px 0 0;
+    padding:22px 18px
+  }
+  .mobile-action-form h2 {
+    font-size:23px
+  }
+  .mobile-action-form input {
+    min-height:48px;
+    border-radius:12px
+  }
+  .mobile-action-form .agri-primary {
+    width:100%;
+    min-height:52px;
+    background:#165442
+  }
+  }
+  .onboarding-screen {
+    position:fixed;
+    inset:0;
+    z-index:70;
+    background:white;
+    color:#103d33;
+    padding:28px max(18px,calc((100vw - 520px)/2));
+    overflow:auto;
+    box-sizing:border-box
+  }
+  .onboarding-screen h1 {
+    font-size:28px;
+    margin:16px 0
+  }
+  .onboarding-screen p {
+    font-size:16px;
+    line-height:1.7;
+    color:#697b73
+  }
+  .onboarding-screen button {
+    font:inherit;
+    color:inherit;
+    min-height:50px;
+    border:0;
+    border-radius:14px;
+    padding:14px;
+    margin:10px 0;
+    cursor:pointer
+  }
+  .onboarding-garden {
+    display:block;
+    width:100%;
+    text-align:left;
+    background:#f8fcf5;
+    border:1px solid #dfe9dd!important
+  }
+  .onboarding-garden.selected {
+    border-color:#7ab46d!important;
+    background:#f0fae9
+  }
+  .onboarding-garden h2 {
+    font-size:22px;
+    margin:12px 0
+  }
+  .onboarding-cover {
+    height:175px;
+    border-radius:12px;
+    background:#e6f5dd url('/friendly/vineyard-aerial-v1.png') center/cover;
+    position:relative
+  }
+  .onboarding-option {
+    display:block;
+    box-sizing:border-box;
+    width:100%;
+    text-align:left;
+    background:white;
+    border:1px solid #e3ebe5!important;
+    border-radius:16px;
+    padding:16px
+  }
+  .onboarding-screen .agri-primary {
+    width:100%;
+    min-height:54px;
+    background:#165442;
+    color:white
+  }
+  .onboarding-mascot {
+    display:block;
+    width:150px;
+    height:170px;
+    object-fit:contain;
+    margin:20px auto
+  }
+  .onboarding-screen:has(.onboarding-mascot)>h1 {
+    text-align:center
+  }
+  .onboarding-behind-form {
+    z-index:10
+  }
+  /* Parent state owns the mobile/desktop boundary; child class names are independent. */
+  @media(max-width:767px) {
+  .phone-overview .agri-main>header,.phone-overview .agri-main>.friendly-welcome,.phone-overview .agri-main>.agri-context,.phone-overview .agri-main>.live-banner,.phone-overview .phone-overview-content~* {
+    display:none!important
+  }
+  .phone-overview .agri-main {
+    padding-top:8px
+  }
+  .phone-knowledge>.mobile-workspace-header {
+    display:none
+  }
+  .phone-knowledge .agri-main>header,.phone-knowledge .agri-main>.agri-context,.phone-knowledge .agri-main>.live-banner {
+    display:none
+  }
+  .phone-tasks .agri-main>header {
+    display:none
+  }
+  .mobile-workspace-header .mobile-garden-selector {
+    display:flex;
+    align-items:center;
+    gap:8px
+  }
+  .mobile-garden-selector .shuyu-brand-mark {
+    width:36px;
+    height:40px;
+    object-fit:contain
+  }
+  .mobile-workspace-nav {
+    height:calc(68px + env(safe-area-inset-bottom));
+    min-height:68px;
+    padding:4px 16px calc(4px + env(safe-area-inset-bottom))
+  }
+  .mobile-workspace-nav button {
+    height:56px;
+    min-height:56px
+  }
+  .mobile-workspace-nav button.active {
+    background:#e6f5dd;
+    color:#165442
+  }
+  .mobile-workspace-nav button.active i {
+    color:#165442
+  }
+  .agri-main {
+    padding-bottom:calc(84px + env(safe-area-inset-bottom))
+  }
+  }
+
+
+@media(max-width:767px){.phone-task-detail>.mobile-workspace-header,.phone-task-form>.mobile-workspace-header,.phone-tasks .agri-main>.live-banner,.phone-task-form .agri-main>.live-banner{display:none}.phone-task-detail .agri-main{padding-top:8px}.phone-task-form .agri-modal:has(.mobile-completion-form){top:0}.phone-tasks .agri-main>.agri-context{display:none}}
+.phone-chat-welcome{display:none}.report-scope-modal{position:fixed;inset:0;z-index:80;background:#103d3355;display:flex;align-items:center;justify-content:center}.report-scope-modal>section{width:min(480px,95vw);background:white;padding:22px;border-radius:18px}.report-scope-modal label{display:block;padding:12px}
+@media(max-width:767px){.phone-chat-welcome{display:flex;gap:12px;padding-top:32px;align-items:start}.phone-chat-welcome img{width:44px;height:52px;object-fit:contain}.phone-chat-welcome p{background:white;border:1px solid #edf2ed;border-radius:18px;padding:16px;font-size:16px;line-height:1.7;color:#183d33}.chat-workspace .agri-welcome{display:none}.chat-workspace .agri-agent>header{justify-content:center}.chat-workspace .agri-agent>header>.resource-toggle,.chat-workspace .agri-agent>header>.agent-settings{display:none}.chat-workspace .agri-agent>header>div{text-align:center}.complete-page-modal{position:fixed!important;inset:0 0 calc(68px + env(safe-area-inset-bottom))!important;padding:0!important;z-index:80!important;display:block!important;background:white!important}.complete-page-modal>section{box-sizing:border-box;width:100%!important;height:100%!important;max-height:none!important;max-width:none!important;margin:0!important;padding:16px!important;border:0!important;border-radius:0!important;overflow:auto!important}.mobile-completion-form h2{font-size:24px!important}.completion-task-summary{padding:16px;background:#fff8e5;border:1px solid #f4e5bf;border-radius:14px;font-size:18px;margin:16px 0}.mobile-completion-form fieldset label{position:relative}.mobile-completion-form fieldset input{position:absolute;right:2px;top:2px;min-height:20px;width:20px;height:20px}.mobile-completion-form fieldset>button{width:88px;height:100px;border:1px dashed #bacdc2;background:#fafcf9;border-radius:12px}.mobile-completion-form .agri-primary{font-size:17px!important;min-height:52px!important}.report-scope-modal{align-items:end}.report-scope-modal>section{width:100%;border-radius:20px 20px 0 0}}
+
+@media(max-width:767px){.complete-page-backdrop{position:fixed;inset:0 0 calc(68px + env(safe-area-inset-bottom));padding:0;display:block;background:white}.complete-page-modal{position:relative!important;inset:auto!important;height:100%!important;width:100%!important;max-height:none!important;max-width:none!important;border-radius:0!important;padding:16px!important;overflow:auto!important}}
+
+/* Garden subpages have their own back/title bar. */
+@media(max-width:767px){
+ .phone-overview:has(.garden-subpage)>.mobile-workspace-header{display:none}
+ .phone-overview:has(.garden-subpage)>.agri-main{padding-top:12px}
+ .phone-overview:has(.garden-subpage) .garden-fidelity{padding-bottom:24px}
+}
+.context-more summary{cursor:pointer;min-height:32px;padding:6px}.context-more[open]{position:relative}.context-more[open]>button{display:block}
+@media(max-width:767px){.phone-monitor .agri-main>header,.phone-devices .agri-main>header{display:none}.phone-monitor .agri-main>.agri-context,.phone-devices .agri-main>.agri-context{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:4px 0;margin:0 0 8px;background:transparent;border:0}.phone-monitor .agri-context select,.phone-devices .agri-context select{min-height:40px;max-width:70%;border-radius:20px;background:#f1f7f1}.context-more[open]>button{min-height:44px}.phone-monitor .mobile-back,.phone-devices .mobile-back{display:none}.report-scope-modal>section{max-height:85dvh;overflow:auto}.report-scope-modal details button{display:block;width:100%;text-align:left;margin:6px 0}.report-scope-modal .agri-primary{width:100%;min-height:52px;background:#165442;color:white}}
+
+@media(max-width:767px){
+ .agri-workbench.phone-knowledge,.agri-workbench.phone-task-detail,.agri-workbench.phone-overview:has(.garden-subpage){grid-template-rows:0 minmax(0,1fr)}
+ .phone-knowledge .concept-learning-header h2{font-size:26px;margin:0}
+}
+
+@media(max-width:767px){
+ .agri-workbench.phone-monitor:not(.chat-workspace)>.agri-main:has(.field-mobile-header)>header,
+ .agri-workbench.phone-devices:not(.chat-workspace)>.agri-main:has(.field-mobile-header)>header{display:none}
+}
+@media(max-width:767px){.complete-page-modal .agri-close{float:none;display:block;min-height:44px;font-size:16px;color:#165442;background:transparent;border:0;padding-left:0}.complete-page-modal .mobile-completion-form{padding-bottom:18px}.complete-page-modal .mobile-completion-form>label{display:block;margin:18px 0;font-size:17px;font-weight:600;line-height:1.6}.complete-page-modal .mobile-completion-form textarea{display:block;margin-top:10px;min-height:145px;width:100%;padding:14px;border:1px solid #dce7df;border-radius:14px;font-size:16px;font-weight:400;line-height:1.7}.complete-page-modal .mobile-completion-form>.agri-primary{display:block;width:100%;min-height:54px;font-size:17px;margin-top:20px;border-radius:14px;background:#165442;color:white}}
+
+@media (max-width:767px) {
+  .phone-monitor:has(.mobile-page-camera), .phone-monitor:has(.mobile-page-robot) { grid-template-rows:0 minmax(0,1fr); }
+  .phone-monitor:has(.mobile-page-camera)>.mobile-workspace-header, .phone-monitor:has(.mobile-page-robot)>.mobile-workspace-header,
+  .phone-monitor:has(.mobile-page-camera) .agri-main>.agri-context, .phone-monitor:has(.mobile-page-robot) .agri-main>.agri-context { display:none; }
+  .phone-monitor:has(.mobile-page-camera)>.agri-main, .phone-monitor:has(.mobile-page-robot)>.agri-main { padding-top:12px; }
+}
+
+@media(max-width:767px){.complete-page-modal .mobile-completion-form>fieldset{display:flex;flex-wrap:nowrap;overflow-x:auto;gap:10px;padding:12px 0 18px;align-items:start}.complete-page-modal .mobile-completion-form>fieldset>label{flex:0 0 94px;width:94px;min-width:94px;display:block;overflow:hidden;white-space:nowrap;text-overflow:ellipsis;font-size:12px}.complete-page-modal .completion-thumbnail{width:94px;height:96px}.complete-page-modal .mobile-completion-form>fieldset>button{flex:0 0 94px;width:94px;min-width:94px;height:96px;padding:8px 3px;font-size:14px;white-space:nowrap}.complete-page-modal .mobile-completion-form>.agri-primary{position:sticky;bottom:0;z-index:3;box-shadow:0 -10px 0 8px white;margin-bottom:0}.agri-workbench .mobile-task-flow .agri-primary{font-size:17px;font-weight:600;min-height:52px}.complete-page-modal .mobile-completion-form{padding-bottom:4px}}
+
+@media(max-width:767px){.phone-tasks>.mobile-workspace-header{display:none}.phone-tasks.agri-workbench{grid-template-rows:0 minmax(0,1fr) 0}.phone-tasks .agri-main>header{display:none!important}.agri-workbench .mobile-task-flow .task-saved p,.agri-workbench .mobile-task-flow .task-description,.agri-workbench .mobile-task-flow aside,.agri-workbench .mobile-task-flow .task-speech p{font-size:16px;line-height:1.6}.agri-workbench .mobile-task-flow .task-option,.agri-workbench .mobile-task-flow .task-card-link,.agri-workbench .mobile-task-flow>button{font-size:17px;line-height:1.5}.agri-workbench .mobile-task-flow .task-option small{font-size:13px}.report-scope-modal{inset:0 0 calc(68px + env(safe-area-inset-bottom));display:block;background:white;padding:0}.report-scope-modal>section{box-sizing:border-box;width:100%;height:100%;max-height:none;border-radius:0;padding:18px;overflow:auto}.report-scope-modal h2{font-size:24px;margin:16px 0}.report-scope-modal p,.report-scope-modal summary{font-size:16px;line-height:1.6}.report-scope-modal label{font-size:16px;padding:12px 0}.report-scope-modal select{display:block;width:100%;min-height:48px;font-size:16px;margin-top:8px;border-radius:12px}.report-scope-modal .report-task-choice{display:flex;align-items:center;gap:12px;padding:16px;border:1px solid #dce8de;border-radius:14px;margin:10px 0;background:#f9fcf7;font-size:16px;line-height:1.5}.report-scope-modal .report-task-choice input[type=checkbox]{display:block;flex:0 0 20px;width:20px;height:20px;min-height:20px;padding:0;margin:0;accent-color:#165442}.report-scope-modal .agri-primary{position:sticky;bottom:0;font-size:17px;min-height:54px;width:100%;margin-top:18px;box-shadow:0 -10px 0 8px white}}
+
+/* Task confirmation uses explicit modal ownership, independent of child :has selectors. */
+@media(max-width:767px){.agri-workbench .task-confirm-backdrop{position:fixed;inset:0 0 calc(68px + env(safe-area-inset-bottom));z-index:85;display:flex;align-items:end;justify-content:center;background:#103d3355;padding:0}.agri-workbench .task-confirm-backdrop>.task-confirm-modal{position:relative;box-sizing:border-box;display:block;width:100%;max-width:none;max-height:90%;height:auto;margin:0;inset:auto;border:0;border-radius:22px 22px 0 0;background:#fff;color:#103d33;padding:18px;overflow:auto;box-shadow:0 -8px 40px #103d3322}.task-confirm-modal .agri-close{display:block;float:none;min-height:44px;border:0;background:white;color:#165442;padding-left:0;font-size:16px}.task-confirm-modal .mobile-action-form h2{font-size:24px;line-height:1.4;margin:4px 0 20px}.task-confirm-modal .mobile-action-form>label{display:block;font-size:16px;line-height:1.6;margin:16px 0}.task-confirm-modal .mobile-action-form input,.task-confirm-modal .mobile-action-form textarea{box-sizing:border-box;display:block;width:100%;padding:12px;border:1px solid #dce7df;border-radius:12px;background:#fff;font-size:16px;line-height:1.6;margin-top:8px;min-height:48px}.task-confirm-modal .mobile-action-form textarea{min-height:125px;resize:vertical}.task-confirm-modal .mobile-action-form>.agri-primary{position:sticky;bottom:0;width:100%;min-height:54px;font-size:17px;background:#165442;color:white;border-radius:14px;box-shadow:0 -8px 0 6px white;margin-top:16px}}
+
+@media (max-width:767px) {
+  .agri-workbench .voice-overlay { padding:0; }
+  .agri-workbench .voice-recorder>button { font-size:17px; min-height:52px; }
+}
+
+@media (max-width:767px) {
+ .agri-workbench .agri-messages .mobile-upload-receipt { margin:16px 0; }
+ .agri-workbench .mobile-upload-receipt>.agri-primary { font-size:17px; min-height:52px; }
+ .agri-workbench .mobile-upload-receipt>span { font-size:14px; line-height:1.6; }
+}
+
+.onboarding-cover::after { content:'园区示意'; position:absolute;left:8px;bottom:8px;padding:3px 7px;border-radius:5px;background:#163f32bb;color:white;font-size:12px; }
+.agri-workbench .onboarding-screen>button { font-size:17px; }
+.learning-source-cover,.setup-illustration{height:140px;border-radius:14px;background:#e6f5dd url('/friendly/covers-grid-v1.png') 100% 100%/200% 200%}.learning-source-cover{width:76px;height:80px;float:left;margin-right:14px}.learning-source-card{min-height:115px}.learning-source-card small{font-size:13px}.learning-continue{width:100%;min-height:50px;font-size:16px;margin:12px 0;background:#e6f5dd;border-radius:14px;color:#165442}
+
+@media (max-width:767px) {
+ .agri-workbench .agri-modal form.learning-note-form textarea { height:112px; min-height:112px; }
+ .learning-note-form .completion-task-summary small,.learning-note-form .completion-task-summary strong { display:block; }
+}
+
+.setup-illustration { position:relative; background:#e6f5dd url('/friendly/vineyard-aerial-v1.png') center/cover; }
+.setup-illustration::after { content:'园区示意'; position:absolute;left:8px;bottom:8px;padding:3px 7px;border-radius:5px;background:#163f32bb;color:white;font-size:12px; }
+
+@media (max-width:767px) {
+ .agri-workbench .agri-modal form .learning-continue { font-size:16px; background:#e6f5dd; }
+}
+
+.conversation-drawer { display:none }
+@media(max-width:767px) {
+  .agri-sidebar.desktop-sidebar { display:none!important }
+  .agri-workbench>.mobile-menu-shade { padding:0; margin:0; border-radius:0; position:fixed; inset:0; z-index:119; background:rgba(21,39,34,.4); border:0; width:100%; height:100% }
+  .conversation-drawer { display:flex; flex-direction:column; gap:16px; position:fixed; inset:0 auto 0 0; width:min(320px,86vw); height:100dvh; z-index:120; background:#fafbf9; padding:20px 16px max(16px,env(safe-area-inset-bottom)); box-sizing:border-box; color:#243b34; box-shadow:8px 0 32px #12271b22 }
+  .conversation-drawer header,.conversation-drawer footer>div { display:flex; align-items:center; justify-content:space-between; gap:8px }
+  .conversation-drawer header strong { font-size:22px }
+  .conversation-drawer button { min-height:44px; border:0; border-radius:10px; background:transparent; color:inherit; padding:10px 12px; text-align:left; cursor:pointer }
+  .conversation-drawer header button { text-align:center; min-width:44px }
+  .conversation-drawer .drawer-new { background:#e6eee7; font-weight:600 }
+  .conversation-drawer input,.conversation-drawer select { box-sizing:border-box; width:100%; min-height:44px; border:1px solid #dce4de; border-radius:10px; background:white; padding:10px; color:inherit }
+  .drawer-history { flex:1; overflow:auto; min-height:0 }
+  .drawer-history h2 { font-size:12px; color:#78847e; font-weight:500; margin:0 12px 8px }
+  .drawer-history button { display:block; width:100%; white-space:nowrap; overflow:hidden; text-overflow:ellipsis }
+  .drawer-history button.active { background:#e9eee9 }
+  .drawer-history p { font-size:14px; padding:0 12px; color:#69766f }
+  .conversation-drawer footer { border-top:1px solid #e3e8e3; padding-top:12px; font-size:13px }
+  .conversation-drawer footer label { display:block; color:#6d7b73 }
+  .conversation-drawer footer select { margin-top:6px }
+}
+
+@media(max-width:767px) {
+  .drawer-brand { display:flex; align-items:center; gap:8px }
+  .drawer-brand svg,.drawer-brand img { width:40px; height:40px }
+  .conversation-drawer button { font-size:15px }
+  .conversation-drawer input { font-size:16px }
+  .drawer-history button { display:flex; align-items:center; gap:10px }
+  .drawer-history button span { overflow:hidden; text-overflow:ellipsis; white-space:nowrap }
+  .drawer-history button i { flex:none; color:#77877d }
+}
+.mobile-more,.mobile-chat-tools{display:none}
+.composer-locked{pointer-events:none;opacity:.6}
+@media(max-width:767px){
+.agri-agent{background:#fff!important}
+.agri-agent>header{min-height:42px!important;padding:3px 16px!important;border:0!important;background:#fff!important}
+.agri-agent>header .agri-drop,.agri-agent>header h2,.agri-agent>header .resource-toggle,.agri-agent>header .agent-settings{display:none!important}
+.mobile-context-pill{font-size:12px!important;color:#77847f!important;background:#f6f7f6;border-radius:20px;padding:5px 12px;display:inline-block}
+.agri-composer{position:relative!important;display:flex!important;align-items:center!important;gap:2px!important;margin:8px 12px 10px!important;padding:5px 7px!important;border:0!important;border-radius:28px!important;background:#f3f5f4!important;box-shadow:none!important}
+.agri-composer textarea{min-height:42px!important;height:42px!important;max-height:100px!important;padding:11px 6px!important;background:transparent!important;border:0!important;font-size:15px!important;resize:none}
+.agri-composer .mobile-voice,.agri-composer .mobile-more{display:flex!important;align-items:center;justify-content:center;flex:0 0 44px;width:44px;height:44px;border:0!important;background:transparent!important;color:#42594e!important;font-size:25px}
+.agri-composer .agri-send{flex:0 0 44px!important;width:44px!important;height:44px!important;min-width:44px!important;border-radius:50%!important;padding:0!important;background:#246b51!important}
+.mobile-chat-tools{position:absolute;z-index:4;right:0;bottom:calc(100% + 8px);display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:4px 6px;width:min(292px,calc(100% - 12px));margin:0;padding:10px;border:1px solid #e8ede9;border-radius:16px;background:#fff;box-shadow:0 6px 24px #163a3214;max-height:min(180px,40dvh);overflow:auto}
+.agri-composer .mobile-chat-tools button{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:5px;min-width:0;min-height:56px;padding:6px 2px;border:0;border-radius:10px;background:transparent;color:#59695f;font-size:12px;line-height:1.35;white-space:nowrap}
+.mobile-chat-tools i{display:flex;align-items:center;justify-content:center;width:48px;height:46px;background:#f2f6f3;border-radius:15px;font-size:23px;color:#42735c}
+.mobile-suggestions{display:flex;flex-direction:column;gap:9px;margin-top:24px}.mobile-suggestions button{border:1px solid #edf0ed;background:#fff;border-radius:18px;padding:12px 17px;color:#6a7770;font-size:13px}
+.mobile-chat-empty p{font-size:16px!important;color:#6f8177!important}
+}
+@media(max-width:767px){.agri-composer .mobile-send-empty{display:none!important}.phone-chat-welcome p{font-size:16px!important;line-height:1.6!important}.mobile-suggestions button{min-height:44px}}
+@media(max-width:767px){
+.phone-chat-welcome{flex-direction:column!important;align-items:center!important;justify-content:center;gap:0!important;width:100%;padding:clamp(22px,7vh,64px) 12px 24px!important;text-align:center;box-sizing:border-box}
+.phone-chat-welcome img{width:72px!important;height:82px!important;margin-bottom:20px;object-fit:contain}
+.phone-chat-welcome p{padding:0!important;margin:0!important;background:transparent!important;border:0!important;border-radius:0!important;box-shadow:none!important;font-size:20px!important;font-weight:600;line-height:1.5!important;color:#294c3d!important}
+.phone-chat-welcome .mobile-suggestions{width:min(100%,300px);margin-top:26px;gap:10px;align-items:stretch}
+.phone-chat-welcome .mobile-suggestions button{min-height:44px;padding:10px 15px;border-radius:22px;border-color:#e8eeea;background:#fafcfb;color:#66796f;font-size:13px;font-weight:400;white-space:normal;line-height:1.5}
+.agri-composer .mobile-chat-tools i{background:currentColor;border-radius:0;width:20px;height:20px;margin:0;font-size:20px;color:#61766a}
+}
+@media(max-width:767px){.agri-composer textarea{font-size:16px!important}.agri-agent>header .mobile-context-pill{border:0;min-height:44px;cursor:pointer;font-family:inherit}.agri-agent>header .mobile-context-pill:focus-visible{outline:2px solid #246b51;outline-offset:2px}}
+
+.mobile-round-context{display:none}
+@media(max-width:767px){.mobile-round-context{display:flex;align-items:center;gap:7px;padding:5px 16px 0;color:#77847f;font-size:12px;flex-shrink:0}.mobile-round-context button{min-height:32px;max-width:65%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;border:1px solid #e3ebe5;border-radius:18px;background:#f5f8f5;color:#426550;padding:4px 10px;font:inherit}.mobile-round-context button:focus-visible{outline:2px solid #246b51;outline-offset:2px}}

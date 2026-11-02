@@ -1,0 +1,9 @@
+import {it,expect,vi,afterEach} from 'vitest'
+import {encodeWav} from '../src/agriculture/wav.js'
+import {useLocalSpeech} from '../src/agriculture/useLocalSpeech.js'
+import {observationSourceLabel} from '../src/agriculture/presentation.js'
+afterEach(()=>vi.unstubAllGlobals())
+it('encodes actual samples as mono little-endian PCM WAV with saturation',async()=>{const blob=encodeWav([new Float32Array([-2,-0.5,0,0.5,2])],48000);const view=new DataView(await blob.arrayBuffer());expect(blob.type).toBe('audio/wav');expect(view.getUint32(24,true)).toBe(48000);expect(view.getUint16(22,true)).toBe(1);expect(view.getUint32(40,true)).toBe(10);expect(view.getInt16(44,true)).toBe(-32768);expect(view.getInt16(52,true)).toBe(32767)})
+it('refuses external voices and provides readable fallback',()=>{const speak=vi.fn();vi.stubGlobal('speechSynthesis',{cancel:vi.fn(),getVoices:()=>[{lang:'zh-CN',localService:false}],speak});vi.stubGlobal('SpeechSynthesisUtterance',function(text){this.text=text});const speech=useLocalSpeech();speech.speak('秘密原文');expect(speak).not.toHaveBeenCalled();expect(speech.speechMessage.value).toContain('未连接外部')})
+it('explicit local speech stops and ignores stale utterance callbacks',()=>{const utterances=[];const cancel=vi.fn();vi.stubGlobal('speechSynthesis',{cancel,getVoices:()=>[{lang:'zh-CN',localService:true}],speak:u=>utterances.push(u)});vi.stubGlobal('SpeechSynthesisUtterance',function(text){this.text=text});const speech=useLocalSpeech();expect(utterances).toHaveLength(0);speech.speak('第一段。第二段。');expect(utterances).toHaveLength(1);speech.stop();utterances[0].onend();expect(utterances).toHaveLength(1);expect(speech.speaking.value).toBe(false);expect(cancel).toHaveBeenCalled()})
+it('labels frozen demo observations as simulated rather than measured',()=>expect(observationSourceLabel('demo')).toContain('非实测'))

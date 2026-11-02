@@ -1,0 +1,15 @@
+#!/bin/sh
+set -eu
+project=$(CDPATH= cd -- "$(dirname -- "$0")" && pwd)
+cd "$project"
+if [ -n "${SHUYU_PYTHON:-}" ]; then
+    python=$SHUYU_PYTHON
+elif [ -x "$project/server/.venv/bin/python" ]; then
+    python="$project/server/.venv/bin/python"
+else
+    python=python3
+fi
+if [ "${1:-}" = --config ]; then
+    exec "$python" -m server.app "$@"
+fi
+exec "$python" -m server.app --config "$project/.runtime/local.json" "$@"

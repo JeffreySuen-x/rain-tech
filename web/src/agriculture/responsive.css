@@ -1,0 +1,83 @@
+/* Final layout layer: viewport rules are kept together after legacy styles. */
+.mobile-workspace-header,.mobile-workspace-nav{display:none}
+.agri-workbench,.agri-workbench.agent-collapsed{grid-template-columns:232px minmax(0,1fr)}
+.agri-workbench:not(.agent-collapsed):not(.chat-workspace){grid-template-columns:232px minmax(0,1fr) 340px}
+.agri-workbench.chat-workspace{grid-template-columns:232px minmax(0,1fr) 280px}
+.agri-sidebar{padding:26px 18px 20px}
+.agri-brand{margin:0 4px 28px;gap:12px}
+.agri-sidebar nav button{font-size:16px;gap:12px;white-space:nowrap;min-height:52px}
+.agri-sidebar .agri-new{font-size:13px;min-height:44px}
+.agri-sidebar .agri-return{min-height:44px;font-size:13px}
+.agri-main{min-width:0;padding:26px 24px}
+.agri-workbench .friendly-welcome{grid-template-columns:repeat(2,minmax(0,1fr))}
+.agri-workbench .friendly-ask{grid-column:1/-1}
+.agri-workbench .friendly-ask>img.shuyu-brand-mark{height:92px;width:92px}
+.friendly-calendar-icon{width:78px;height:90px;border:1px solid #dfc9a0;border-radius:10px;background:#fffdf7;box-shadow:0 4px 0 #e8dfcc;display:flex;flex-direction:column;align-items:center;justify-content:center;overflow:visible}
+.friendly-calendar-icon:before,.friendly-calendar-icon:after{content:'';position:absolute;top:-7px;width:6px;height:15px;border-radius:3px;background:#998a70}
+.friendly-calendar-icon:before{left:17px}.friendly-calendar-icon:after{right:17px}
+.friendly-calendar-icon>span{width:100%;text-align:center;padding:8px 0 5px;background:#e9d6b1;border-radius:9px 9px 0 0;color:#68502a;font-size:13px}
+.friendly-calendar-icon>strong{position:static;inset:auto;display:block;transform:none;font-size:38px;line-height:1.3;color:#354639;padding:0 0 3px}
+.agri-workbench .friendly-calendar h2{font-size:22px;line-height:1.4}
+.friendly-calendar>div:nth-child(2){min-width:0}.friendly-calendar button{margin:6px 0 0 6px}
+@media(min-width:1440px){.agri-workbench.agent-collapsed .friendly-welcome{grid-template-columns:1fr 1fr 1.18fr}.agri-workbench.agent-collapsed .friendly-ask{grid-column:auto}}
+@media(min-width:768px) and (max-width:1099px){
+ .agri-workbench,.agri-workbench.agent-collapsed,.agri-workbench.chat-workspace{grid-template-columns:196px minmax(0,1fr)}
+ .agri-workbench:not(.agent-collapsed):not(.chat-workspace){grid-template-columns:196px minmax(0,1fr)}
+ .agri-sidebar{padding:24px 12px}.agri-sidebar nav button{font-size:15px;gap:10px}.agri-main{padding:22px 18px}
+ .agri-workbench:not(.chat-workspace) .agri-agent{position:fixed;inset:12px 12px 12px auto;width:min(460px,calc(100vw - 220px));margin:0;z-index:40;box-shadow:0 12px 60px #18322545}
+ .chat-workspace .agri-agent{grid-column:2;margin:12px;grid-row:1}.chat-workspace .chat-resources{display:none}
+ .resource-toggle,.resource-close{display:block;min-height:44px}
+ .chat-workspace.resources-open .chat-resources{display:block;position:fixed;inset:12px 12px 12px auto;width:360px;z-index:60;overflow:auto;background:#f3f6ef}
+ .friendly-welcome>section{padding:16px 12px;gap:10px}.friendly-calendar-icon{width:64px}.agri-workbench .friendly-calendar h2{font-size:19px}
+}
+@media(max-width:767px){
+ .agri-workbench,.agri-workbench.agent-collapsed,.agri-workbench.chat-workspace,.agri-workbench:not(.agent-collapsed):not(.chat-workspace){display:grid;grid-template-columns:minmax(0,1fr);grid-template-rows:60px minmax(0,1fr);height:100dvh;min-height:0;overflow:hidden;padding-top:env(safe-area-inset-top);padding-bottom:calc(66px + env(safe-area-inset-bottom))}
+ .mobile-workspace-header{grid-row:1;grid-column:1;display:flex;justify-content:space-between;align-items:center;padding:7px 12px;background:#244638;color:#fff;gap:8px;min-width:0}
+ .mobile-workspace-header>div{display:flex;gap:8px;align-items:center;min-width:0}.mobile-workspace-header img{width:33px;height:38px}.mobile-workspace-header strong{font-size:19px;white-space:nowrap}.mobile-workspace-header span{font-size:12px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;max-width:32vw}.mobile-workspace-header button{min-height:44px;white-space:nowrap;color:#fff;background:#365d49;border-color:#66836f;font-size:12px;padding:7px 9px}
+ .agri-sidebar{display:none}.agri-sidebar.mobile-menu-open{display:flex;position:fixed;inset:calc(60px + env(safe-area-inset-top)) 10px auto;max-height:calc(100dvh - 150px);height:auto;z-index:65;padding:18px;border-radius:0 0 14px 14px;overflow:auto;box-shadow:0 16px 40px #18322555}
+ .agri-sidebar.mobile-menu-open .agri-brand,.agri-sidebar.mobile-menu-open nav{display:none}.agri-sidebar.mobile-menu-open select,.agri-sidebar.mobile-menu-open .agri-new{display:block}.agri-sidebar.mobile-menu-open .agri-return{margin-top:10px}.agri-sidebar select{min-height:44px}
+ .mobile-workspace-nav{position:fixed;inset:auto 0 0;display:grid;grid-template-columns:repeat(6,minmax(0,1fr));padding:5px 4px calc(5px + env(safe-area-inset-bottom));background:#fff;border-top:1px solid #dce6dc;z-index:50}
+ .mobile-workspace-nav button{display:flex;flex-direction:column;justify-content:center;align-items:center;gap:4px;border:0;border-radius:9px;min-height:54px;padding:5px 1px;font-size:11px;color:#63776b;background:transparent}.mobile-workspace-nav i{font-size:21px}.mobile-workspace-nav button.active{background:#e7f0e3;color:#25563a;font-weight:700}
+ .agri-main{grid-column:1;grid-row:2;padding:18px 14px;overflow:auto;min-height:0;min-width:0}.agri-main header h1{font-size:26px;line-height:1.4}.agri-main header p{font-size:14px;line-height:1.7}.agri-agent-toggle{float:none;margin-bottom:12px}
+ .agri-workbench .friendly-welcome{grid-template-columns:minmax(0,1fr);gap:12px}.agri-workbench .friendly-ask{grid-column:auto}.friendly-welcome>section{padding:18px;min-height:155px;gap:16px}.agri-workbench .friendly-welcome h2{font-size:22px}.friendly-calendar-icon{width:80px}.friendly-ask button{min-height:44px;font-size:14px;padding:8px 10px}.agri-workbench .friendly-ask>img.shuyu-brand-mark{width:78px;height:90px}
+ .agri-context{flex-wrap:wrap}.agri-context select{max-width:100%;min-width:0}.agri-workbench button{touch-action:manipulation}.agri-main button,.agri-agent>header button{min-height:44px}.agri-card{min-width:0;padding:17px}.agri-metrics,.friendly-next-grid,.agri-grid,.agri-two-col,.task-card-grid{grid-template-columns:minmax(0,1fr)}.agri-metrics .agri-card{font-size:14px;padding:17px}.agri-metrics strong{font-size:32px}.agri-metrics small{font-size:12px}.agri-row{flex-wrap:wrap;font-size:14px}.agri-row>span{min-width:0}.agri-row button{font-size:13px}
+ .agri-workbench:not(.chat-workspace) .agri-agent{position:fixed;inset:calc(60px + env(safe-area-inset-top)) 0 calc(66px + env(safe-area-inset-bottom));width:auto;margin:0;border-radius:0;z-index:45;min-height:0}
+ .chat-workspace .agri-agent{grid-column:1;grid-row:2;position:relative;margin:0;border:0;border-radius:0;min-height:0;height:100%}.chat-workspace .chat-resources{display:none;grid-column:1;grid-row:2}.agri-agent>header{padding:10px 12px;gap:8px;flex-wrap:nowrap}.agri-agent>header>div{min-width:0}.agri-agent>header h2{font-size:17px}.agri-agent>header small{font-size:11px}.agri-agent>header .shuyu-brand-mark{width:32px;height:36px}.resource-toggle,.resource-close{display:block!important;min-height:44px}.resource-toggle{font-size:13px!important;padding:8px!important}.agri-agent>header .agent-settings{min-width:36px}
+ .agri-messages{min-height:0;max-height:none;padding:14px;overscroll-behavior:contain}.agri-message{padding:12px}.agri-message p{font-size:15px;line-height:1.8}.agri-quick{flex-wrap:wrap}.agri-quick button{flex:1 1 90px;font-size:13px;min-height:44px}.agri-skill-bar{padding:7px 12px}.agri-skill-bar select{min-height:36px;font-size:13px;max-width:100%}
+ .agri-composer{display:grid;grid-template-columns:minmax(0,1fr) 44px;gap:5px 8px;padding:8px 12px 10px;background:white;flex-shrink:0}.agri-upload-buttons{grid-column:1/-1;flex-direction:row;gap:8px}.agri-upload-buttons button{min-width:40px;min-height:36px;font-size:19px}.agri-composer textarea{font-size:16px;line-height:1.5;min-height:48px;padding:4px 0}.agri-composer .agri-send{width:44px;height:44px}
+ .chat-workspace.resources-open .chat-resources{display:block;position:fixed;inset:calc(60px + env(safe-area-inset-top)) 0 calc(66px + env(safe-area-inset-bottom));width:auto;max-width:none;border-radius:0;z-index:60;overflow:auto;padding:12px 16px;background:#f3f6ef}.resource-close{position:sticky;top:0;background:white;z-index:3;margin:0 0 12px auto;font-size:14px!important;padding:8px 14px!important}
+ .knowledge-grid{grid-template-columns:minmax(0,1fr)!important}.knowledge-grid>article{padding:18px!important;min-height:0}.knowledge-cover{position:relative;inset:auto;width:100%;height:115px;margin-bottom:14px}.knowledge-grid h3{font-size:20px!important}.library-browser>.agri-section-title h2{font-size:26px}.library-tracks button{flex-basis:130px}.task-stats{gap:8px}.task-stats>div{padding:12px 8px}.task-stats small{font-size:12px}.task-card-actions{flex-wrap:wrap}.task-follow-settings{max-width:100%}
+ .agri-modal-backdrop{padding:10px}.agri-modal,.agri-modal:has(.knowledge-reader){width:100%;max-width:100%;max-height:calc(100dvh - 24px - env(safe-area-inset-top) - env(safe-area-inset-bottom));padding:16px}.agri-close{position:sticky;top:0;z-index:5;min-height:44px;background:white!important}.reader-line{grid-template-columns:25px minmax(0,1fr);gap:5px}.reader-line p{font-size:16px}.knowledge-reader{clear:both}.knowledge-reader header h2{font-size:23px}.report-document-layer{inset:calc(6px + env(safe-area-inset-top)) 6px calc(6px + env(safe-area-inset-bottom));padding:10px}.report-toolbar{position:sticky;top:-10px;gap:8px}.report-toolbar button{min-height:44px}.report-paper{padding:18px 14px;overflow-wrap:anywhere}.report-paper h1{font-size:25px}.report-statistics{grid-template-columns:minmax(0,1fr)}.report-photos,.report-charts{grid-template-columns:minmax(0,1fr)}.report-paper table{font-size:12px;table-layout:fixed}.report-paper th,.report-paper td{padding:7px 5px}
+}
+@media(max-width:390px){.friendly-welcome>section{padding:16px 13px;gap:12px}.friendly-ask>div>div{display:flex;flex-wrap:wrap}.friendly-ask button{margin:3px 2px}.agri-workbench .friendly-ask>img.shuyu-brand-mark{width:64px;height:80px}.agri-main{padding:16px 12px}.agri-agent>header small{font-size:10px}}
+@media(max-width:767px){
+ .live-metrics,.live-scene-grid,.inventory-grid{grid-template-columns:minmax(0,1fr)}
+ .agri-workbench .live-metrics>.agri-card{display:grid;grid-template-columns:64px minmax(0,1fr) minmax(72px,.65fr);grid-template-rows:auto auto auto;align-items:center;gap:0 8px;font-size:14px}
+ .agri-workbench .live-metrics>.agri-card>.friendly-icon{grid-column:1;grid-row:1/4;width:64px;height:64px}
+ .agri-workbench .live-metrics>.agri-card>span{grid-column:2;grid-row:1}.agri-workbench .live-metrics>.agri-card>strong{grid-column:2;grid-row:2}.agri-workbench .live-metrics>.agri-card>.live-metric-meta{grid-column:2;grid-row:3}
+ .agri-workbench .live-metrics>.agri-card>svg{grid-column:3;grid-row:1/4;height:52px;width:100%;position:static}
+ .agri-workbench .live-metrics>.agri-card>strong{font-size:28px}.agri-workbench .live-metrics>.agri-card>span{font-size:14px}.agri-workbench .live-metrics>.agri-card>.live-metric-meta{font-size:11px}
+ .live-events li{flex-wrap:wrap;font-size:13px}.live-camera footer,.inventory-card footer{flex-wrap:wrap}.live-scene-grid .agri-section-title{flex-wrap:wrap}
+}
+/* Compact overview actions at tablet and medium desktop widths. */
+@media(min-width:768px) and (max-width:1439px){
+ .agri-workbench .friendly-ask{min-height:120px;padding:14px 18px;gap:18px}
+ .agri-workbench .friendly-ask>img.shuyu-brand-mark{width:76px;height:84px}
+ .friendly-ask>div{display:grid;grid-template-columns:minmax(90px,1fr) auto auto;grid-template-rows:auto auto;align-items:center;column-gap:14px;width:100%}
+ .friendly-ask>div>h2{grid-column:1;grid-row:1;align-self:end}
+ .friendly-ask>div>p{grid-column:1;grid-row:2;align-self:start}
+ .friendly-ask>div>div{grid-column:2;grid-row:1/3;display:flex;align-items:center;flex-wrap:wrap;max-width:180px}
+ .friendly-ask>div>button{grid-column:3;margin:2px 0;white-space:nowrap;font-size:12px;padding:7px 8px}
+ .friendly-ask>div>button:first-of-type{grid-row:1;align-self:end}.friendly-ask>div>button:last-of-type{grid-row:2;align-self:start}
+}
+@media(min-width:768px) and (max-width:1099px){
+ .agri-workbench .friendly-ask{gap:10px;padding:12px}.friendly-ask>div{column-gap:8px;grid-template-columns:minmax(84px,1fr) auto auto}.friendly-ask>div>div{max-width:150px}.friendly-ask>div>div>button{padding:8px;font-size:12px}
+}
+@media(max-width:767px){
+ .agri-workbench:not(.chat-workspace) .agri-main>header{display:grid;grid-template-columns:minmax(0,1fr) auto;align-items:center;gap:8px 10px}
+ .agri-workbench:not(.chat-workspace) .agri-main>header>h1{grid-column:1;grid-row:1;font-size:24px}
+ .agri-workbench:not(.chat-workspace) .agri-main>header>.agri-agent-toggle{grid-column:2;grid-row:1;float:none;margin:0;padding:4px 8px;font-size:13px;gap:4px}
+ .agri-workbench:not(.chat-workspace) .agri-main>header>.agri-agent-toggle .shuyu-brand-mark{width:28px;height:28px}
+ .agri-workbench:not(.chat-workspace) .agri-main>header>p{grid-column:1/-1;grid-row:2}
+}
+/* Teleported reader controls and touch targets are owned by reader.css. */

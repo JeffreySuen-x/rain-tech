@@ -1,0 +1,63 @@
+.mobile-learning-search,.mobile-learning-feature,.mobile-learning-ask,.learning-mobile-label{display:none}
+@media(max-width:767px){
+.agri-workbench .library-browser{background:#fbfcf8;border:0;box-shadow:none;padding:0;min-width:0}
+.library-browser>.agri-section-title h2,.library-browser>.agri-section-title p{display:none}
+.library-browser>.agri-section-title{justify-content:flex-end;margin:0 0 8px}
+.library-browser>.agri-section-title button{font-size:12px;padding:5px 10px}
+.library-browser .library-count{font-size:12px;color:#6b766f;margin:8px 0}
+.library-browser .library-disclosure{font-size:12px;margin-bottom:12px}
+.mobile-learning-search{display:block;order:0;margin-bottom:14px}
+.mobile-learning-search input{width:100%;box-sizing:border-box;border:1px solid #e3e7e1;background:white;border-radius:16px;min-height:48px;padding:12px 16px;font-size:16px}
+.library-browser .library-main-tracks{display:flex;flex-wrap:nowrap;overflow-x:auto;gap:9px;margin:0 0 10px}
+.library-browser .library-main-tracks button{flex:0 0 auto;min-height:42px;padding:10px 17px;background:#eef2e9!important;border:0;border-radius:12px}
+.library-browser .library-main-tracks button.selected{background:#245645!important;color:#fff}
+.library-main-tracks .friendly-icon,.library-main-tracks small{display:none}
+.library-browser .library-small-tracks{display:flex;flex-wrap:nowrap;overflow-x:auto;gap:8px;margin-bottom:12px}
+.library-small-tracks button{white-space:nowrap;font-size:12px;padding:7px 10px}
+.library-browser .workspace-filters input{display:none}
+.library-browser .workspace-filters{margin:8px 0}
+.mobile-learning-feature{display:block;margin:20px 0}
+.library-browser .mobile-learning-feature>h3,.library-browser .library-all-heading{font-size:20px;margin:18px 0 12px}
+.mobile-learning-feature article{padding:8px;background:white;border:1px solid #e6e9e2;border-radius:16px}
+.library-browser .mobile-learning-feature .knowledge-cover{position:relative;inset:auto;width:100%;height:150px;margin:0;border-radius:10px}
+.mobile-learning-feature article h3{font-size:18px;margin:12px 6px 5px;line-height:1.5}
+.mobile-learning-feature article p{font-size:14px;color:#6c766f;margin:5px 6px 14px;line-height:1.6}
+.mobile-learning-feature article button{width:100%;background:#edf2e8;border:0;padding:12px;border-radius:10px;font-size:16px}
+.library-browser .library-starters,.learning-desktop-label{display:none}
+.learning-mobile-label{display:inline}
+.library-browser .knowledge-grid{display:grid;grid-template-columns:minmax(0,1fr)!important;gap:9px}
+.library-browser .knowledge-grid>article{padding:12px 12px 12px 106px!important;min-height:100px;border-radius:14px;background:white}
+.library-browser .knowledge-grid .knowledge-cover{position:absolute;left:8px;top:10px;bottom:auto;width:86px;height:76px;margin:0}
+.library-browser .knowledge-grid .knowledge-cover span{font-size:8px;padding:2px}
+.library-browser .knowledge-grid h3{font-size:16px!important;margin:5px 0;line-height:1.5}
+.library-browser .knowledge-grid article>p,.library-browser .knowledge-grid article>small:not(.knowledge-category){display:none}
+.library-browser .knowledge-category{font-size:10px;color:#728076}
+.library-browser .library-actions{gap:5px;margin-top:9px}
+.library-browser .library-actions button{font-size:11px;padding:6px 7px;min-height:30px}
+.mobile-learning-ask{display:flex;align-items:center;justify-content:space-between;width:100%;background:#edf2e8;border:0;border-radius:13px;min-height:52px;padding:10px;font-size:13px;margin-top:12px}
+.library-browser .library-pagination{font-size:12px;gap:6px;flex-wrap:wrap;margin-top:16px}
+}
+.mobile-learning-home{display:none}.learning-management>.learning-management-toggle{display:none}.learning-management:not(.expanded)>.learning-management-body{display:block}
+@media(max-width:767px){
+ .agri-workbench .library-browser .mobile-learning-feature article>p{display:-webkit-box!important;-webkit-line-clamp:2!important;-webkit-box-orient:vertical;overflow:hidden}
+ .agri-workbench .library-browser .mobile-learning-chips button{background:#edf2e8;border:0;border-radius:11px}
+ .agri-workbench .library-browser .mobile-learning-chips button.selected{background:#245645;color:#fff}
+}
+@media(max-width:767px){
+.mobile-learning-home{display:block}.learning-management>.learning-management-toggle{display:block;padding:14px 10px;min-height:44px;box-sizing:border-box;color:#365d4c;background:#edf2e8;border-radius:12px;margin-top:12px;cursor:pointer}.learning-management:not(.expanded)>.learning-management-body{display:none}
+.mobile-learning-home .mobile-learning-search{margin:0 0 14px}.mobile-learning-chips{display:flex;overflow-x:auto;gap:9px;padding-bottom:4px}.mobile-learning-chips button{white-space:nowrap;border:0;background:#edf2e8;border-radius:11px;min-height:44px;padding:10px 18px;font-size:15px}.mobile-learning-chips button.selected{background:#245645;color:white}
+.mobile-learning-home h3{font-size:18px;margin:18px 0 10px}.mobile-learning-home .mobile-learning-feature{margin:0 0 18px}.mobile-learning-home .mobile-learning-feature .knowledge-cover{height:135px;background-size:200% 200%}.mobile-learning-home .mobile-learning-feature p{display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;font-size:13px;margin-bottom:10px}.mobile-learning-home button{min-height:44px}.mobile-learning-row{width:100%;display:flex;align-items:center;text-align:left;gap:12px;padding:7px!important;border:1px solid #e5e9e2;background:white;border-radius:12px;margin:7px 0;font-size:15px;line-height:1.4}.library-browser .mobile-learning-row .knowledge-cover{position:relative;inset:auto;flex:0 0 86px;width:86px;height:62px;margin:0}.mobile-learning-row>span:nth-child(2){flex:1}.mobile-learning-row>span:last-child{padding:0 8px}.library-browser .library-actions button{min-height:44px}
+}
+.concept-learning-header{display:flex;align-items:center;justify-content:space-between}.concept-learning-header button{border:1px solid #dbe8df;border-radius:18px;background:white;padding:10px;color:#165442}.concept-learning-hero{position:relative;min-height:112px;padding-top:14px}.concept-learning-hero h1{font-size:27px;position:relative;z-index:1;color:#103d33}.concept-learning-hero img{position:absolute;right:-8px;bottom:0;width:105px;height:105px;object-fit:contain}.concept-learning-hero p{font-size:14px;color:#50645b}.mobile-learning-row small{display:block;font-size:13px;line-height:1.6;font-weight:400;margin:8px 0}.mobile-learning-row em{display:block;font-style:normal;background:#e6f5dd;border-radius:10px;padding:7px;color:#165442}.mobile-learning-row strong{font-size:16px}.mobile-learning-row{align-items:stretch!important}.mobile-learning-row .knowledge-cover{height:auto;min-height:140px;width:96px;flex-shrink:0}
+@media(max-width:767px){.mobile-learning-feature{display:none!important}}
+@media(max-width:767px){
+.agri-workbench .library-browser .mobile-learning-row{padding:10px!important;gap:12px;border-radius:16px;margin:10px 0}
+.agri-workbench .library-browser .mobile-learning-row .knowledge-cover{flex:0 0 96px;width:96px;height:136px;min-height:136px;position:relative}
+.agri-workbench .library-browser .mobile-learning-row .knowledge-cover small{position:absolute;bottom:0;left:0;right:0;margin:0;background:#103d3399;color:white;text-align:center;font-size:10px}
+.agri-workbench .library-browser .mobile-learning-row>span:nth-child(2){min-width:0;padding:0;display:flex;flex-direction:column}
+.agri-workbench .library-browser .mobile-learning-row strong{font-size:18px;line-height:1.45;color:#103d33;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.agri-workbench .library-browser .mobile-learning-row .mobile-learning-category{font-size:12px;color:#718078;margin:4px 0}
+.agri-workbench .library-browser .mobile-learning-row .mobile-learning-summary{font-size:14px;line-height:1.55;margin:0 0 8px;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
+.agri-workbench .library-browser .mobile-learning-row em{margin-top:auto;font-size:14px;padding:6px 10px}
+.agri-workbench .library-browser .mobile-learning-row>span:last-child{display:none}
+}

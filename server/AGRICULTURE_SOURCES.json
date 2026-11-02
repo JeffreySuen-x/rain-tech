@@ -1,0 +1,15 @@
+{
+  "schemaVersion": 1,
+  "product": "Shuyu agriculture and training Agent",
+  "license": "MIT",
+  "dependencies": {
+    "python-docx": "MIT",
+    "python-pptx": "MIT",
+    "pypdf": "BSD-3-Clause",
+    "lxml": "BSD-3-Clause",
+    "XlsxWriter": "BSD-2-Clause",
+    "Pillow": "MIT-CMU; bundled codec notices in NOTICE.Pillow-13.0.0.txt",
+    "typing_extensions": "PSF-2.0"
+  },
+  "dependencyUsage": "Libraries are used through public APIs. See requirements-lock.txt for exact versions and installed distributions for complete licenses."
+}
